@@ -1,0 +1,60 @@
+#flap {
+  display: none;
+}
+
+#js-load {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $background-blk;
+}
+
+.waves {
+  width: 110px;
+  height: 60px;
+
+  > div {
+    float: left;
+    background: lighten($base-color, 10%);
+    height: 100%;
+    width: 10px;
+    margin-right: 1px;
+    display: block;
+    position: relative;
+    bottom: 0;
+    margin-top: 35px;
+    height: 5px;
+    animation: loading 1.5s infinite ease-in-out;
+  }
+
+  .wave-01 { animation-delay: -1.5s; }
+  .wave-02 { animation-delay: -1.4s; }
+  .wave-03 { animation-delay: -1.3s; }
+  .wave-04 { animation-delay: -1.2s; }
+  .wave-05 { animation-delay: -1.1s; }
+  .wave-06 { animation-delay: -1.0s; }
+  .wave-07 { animation-delay: -0.9s; }
+  .wave-08 { animation-delay: -0.8s; }
+  .wave-09 { animation-delay: -0.7s; }
+  .wave-10 { animation-delay: -0.6s; }
+}
+
+@keyframes loading {
+  50% {
+    height: 100%;
+    margin-top: 0;
+    background: darken($base-color, 10%);
+  }
+}
+
+
+.lazyload, .lazyloading {
+    opacity: 0;
+}
+.lazyloaded {
+    opacity: 1;
+    transition: opacity 1000ms;
+}

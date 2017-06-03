@@ -1,0 +1,42 @@
+$base-color: #3CB371;
+$base-color-hover: darken($base-color, 10%);
+
+$background: #fff;
+$background-alt: #f2f2f5;
+// $background-alt: #3CB371;
+$background-blk: #000;
+
+$border: #000;
+
+$heading: #374054;
+$text: #74808a;
+
+$tl-lay: 80px;
+
+@mixin transition($duration: 0.25s, $func: ease, $property: all) {
+    transition: #{$duration} #{$func} #{$property};
+}
+
+@mixin shadow-book {
+  box-shadow: 8px 8px 0 1px $background-blk;
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder {
+        @content;
+        opacity: 1;
+    }
+
+    &::-moz-placeholder {
+        @content;
+        opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+}

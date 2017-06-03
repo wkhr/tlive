@@ -1,0 +1,276 @@
+/*
+    ------------------------
+    ----- 1. Variables -----
+    ------------------------
+*/
+
+// Define base and accent colors
+$base-color: #291b08;
+$base-color-hover: darken($base-color, 10%);
+
+// Define background colors
+$background: #fff;
+// $background-alt: #f2f2f5;
+$background-alt: #3CB371;
+$background-blk: #000;
+
+// Define border colors
+$border: #dcd9d9;
+
+// Define text colors
+$heading: #374054;
+$text: #74808a;
+
+// timeline layout modify
+$tl-lay: 50px;
+
+/*
+    ---------------------
+    ----- 2. Mixins -----
+    ---------------------
+*/
+
+@mixin transition($duration: 0.5s, $func: ease, $property: all) {
+    transition: #{$duration} #{$func} #{$property};
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder {
+        @content;
+        opacity: 1;
+    }
+
+    &::-moz-placeholder {
+        @content;
+        opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+
+/*
+    ----------------------------
+    ----- 3. Alternative Projects Styles -----
+    ----------------------------
+*/
+
+#projects {
+    padding: 50px 15px;
+    text-align: center;
+
+    h2 {
+        color: $heading;
+        margin-bottom: 50px;
+    }
+}
+
+.project {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.project-image {
+    float: left;
+}
+
+.project-info {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    margin-left: 300px;
+    padding: 15px;
+
+    h3 {
+        font-size: 1.5em;
+        font-weight: 300;
+        color: $heading;
+        margin: 0 0 15px 0;
+    }
+
+    p {
+        color: $text;
+        margin: 0 0 15px 0;
+        font-size: 0.9em;
+    }
+
+    a {
+        display: inline-block;
+        margin: 15px 0 0 0;
+    }
+}
+
+/*
+    ----------------------------
+    ----- 11. Media Queries -----
+    ----------------------------
+*/
+
+// Collapse timeline
+@media only screen and (max-width: 750px) {
+
+    #experience-timeline {
+        &:before, &:after {
+            left: 23px;
+        }
+
+    }
+
+    .vtimeline-date {
+        width: auto;
+        text-align: left;
+        position: relative;
+        margin-bottom: 15px;
+        display: block;
+        margin-left: 70px;
+    }
+
+    .vtimeline-icon {
+        margin-left: 0;
+    }
+
+    .vtimeline-content {
+        margin-left: calc( 70px - #{$tl-lay} );;
+    }
+
+}
+
+// Medium Devices
+@media only screen and (max-width : 992px) {
+
+    #lead {
+        height: auto;
+        min-height: auto;
+        max-height: auto;
+        padding: 100px 15px;
+    }
+
+    #lead-content {
+        position: relative;
+        transform: none;
+        left: auto;
+        top: auto;
+
+        h1 {
+            font-size: 3em;
+        }
+
+        h2 {
+            font-size: 1.75em;
+        }
+    }
+
+    #about {
+        text-align: center;
+
+        p {
+            text-align: left;
+        }
+    }
+
+}
+
+// Small Devices
+@media only screen and (max-width : 768px) {
+
+    header {
+        position: fixed;
+        display: none;
+        z-index: 999;
+        animation: none;
+        bottom: 0;
+        height: 100%;
+    }
+
+    #mobile-menu-open, #mobile-menu-close {
+        display: block;
+    }
+
+    #menu {
+        height: 100%;
+        overflow-y: auto;
+        box-shadow: none;
+        border-radius: 0;
+        width: 100%;
+
+        li {
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
+
+    #lead-content {
+        h1 {
+            font-size: 2em;
+        }
+
+        h2 {
+            font-size: 1.3em;
+        }
+
+        a {
+            padding: 10px 20px;
+        }
+    }
+
+    #lead-down {
+        display: none;
+    }
+
+    .education-block {
+        h3, span {
+            float: none;
+        }
+    }
+
+    .project-image {
+        display: none;
+    }
+
+    .project-info {
+        position: relative;
+        margin: 0;
+        top: auto;
+        transform: none;
+    }
+
+    footer {
+        text-align: center;
+    }
+
+    .social {
+        text-align: center;
+    }
+
+}
+
+// Extra Small Devices
+@media only screen and (max-width : 480px) {
+
+    #lead-content {
+        h1 {
+            font-size: 1.5em;
+        }
+
+        h2 {
+            font-size: 1em;
+        }
+
+        a {
+            font-size: 0.9em;
+            padding: 5px 10px;
+        }
+    }
+
+}

@@ -1,0 +1,619 @@
+body {
+  background: $background-blk;
+  &.active {
+    overflow: hidden;
+    z-index: -1;
+  }
+}
+
+
+header {
+}
+
+footer {
+  background: $background-blk;
+  padding: 40px 0 20px;
+}
+
+.copyright {
+  padding-top: 20px;
+
+  p {
+    margin: 0;
+    color: $text;
+  }
+}
+
+.top {
+  text-align: center;
+
+  span {
+    cursor: pointer;
+    display: block;
+    margin: 15px auto 0 auto;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 3px solid lighten($text, 25%);
+    text-align:center;
+  }
+
+  i {
+    color: $text;
+  }
+}
+
+.social {
+  text-align: right;
+
+  ul {
+    margin: 5px 0 0 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    font-size: 1.25em;
+    list-style: none;
+  }
+
+  a {
+    display: block;
+    color: $text;
+    padding: 10px;
+
+    &:hover {
+      color: $base-color;
+    }
+  }
+}
+
+
+.heading {
+  position: relative;
+  display: inline-block;
+  font-size: 2em;
+  font-weight: 300;
+  margin: 0 0 30px 0;
+
+  &:after {
+    position: absolute;
+    content: '';
+    top: 100%;
+    height: 5px;
+    width: 50px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: $base-color;
+  }
+}
+
+
+/*
+    --------------------------
+    ----- 4. Lead Styles -----
+    --------------------------
+*/
+
+#lead {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+  min-height: 500px;
+  max-height: 960px;
+
+  // Pedal Board
+  // background: url(../images/photos/img-sample04.jpg);
+  // PA
+  // background: url(../images/photos/img-sample12.jpg);
+  // Live
+  // background: url(../images/photos/img-sample14.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 15px;
+  overflow: hidden;
+
+  // 左右に黒いグラデーションを被せる
+  // &:before {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 10vw;
+  //   height: 100%;
+  //   background: linear-gradient(to right, $background-blk, rgba(0,0,0,0));
+  // }
+  // &:after {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   width: 10vw;
+  //   height: 100%;
+  //   background: linear-gradient(to left, $background-blk, rgba(0,0,0,0));
+  // }
+}
+
+#lead-content {
+  position: absolute;
+  z-index: 10;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  text-align: center;
+
+  h1, h2 {
+    margin: 0;
+  }
+
+  h1 {
+    color: #fff;
+    font-weight: 900;
+    font-size: 5em;
+    text-transform: uppercase;
+    // letter-spacing: 0.05em;
+    line-height: 0.9em;
+  }
+
+  h2 {
+    color: lighten($base-color, 25%);
+    font-weight: 500;
+    font-size: 2.25em;
+    margin-bottom: 15px;
+  }
+
+  span {
+    color: #fff;
+    font-size: 2.0rem;
+    font-weight: 700;
+  }
+}
+
+#lead-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+
+/*
+    ---------------------------
+    ----- 5. About Styles -----
+    ---------------------------
+*/
+
+#about {
+  padding: 75px 15px;
+  background: $background-blk;
+  text-align: center;
+
+  h2 {
+    color: $background;
+  }
+
+  p {
+    color: $text;
+    margin: 0;
+  }
+
+  a {
+    color: $base-color;
+  }
+}
+
+/*
+    --------------------------------
+    ----- 6. Experience Styles -----
+    --------------------------------
+*/
+
+#artists {
+  padding: 50px 15px;
+  text-align: center;
+  background: $background-alt;
+
+  h2 { color: $heading; }
+}
+
+#artists-timetable {
+  margin: 30px auto 0 auto;
+  position: relative;
+  max-width: 1000px;
+
+  &:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: calc( 303px - #{$tl-lay} );
+    right: auto;
+    height: 100%;
+    width: 3px;
+    background: $base-color;
+    z-index: 0;
+  }
+
+  // &:after {
+  //   position: absolute;
+  //   content: '';
+  //   width: 3px;
+  //   height: 40px;
+  //   background: $base-color;
+  //   background: linear-gradient(to bottom, $base-color, rgba($base-color, 0));
+  //   top: 100%;
+  //   left: calc( 303px - #{$tl-lay} );
+  // }
+}
+
+.artist-section {
+  margin-left: calc( 350px - #{$tl-lay} );
+  // background: #fff;
+  // border: 1px solid #e6e6e6;
+  padding: 10px;
+  text-align: left;
+
+  h3 {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: $heading;
+    display: inline-block;
+    margin: 0;
+  }
+
+  h4 {
+    font-size: 1.2em;
+    font-weight: 300;
+    color: #7e8890;
+    margin: 0 0 15px 0;
+  }
+
+  p {
+    color: $text;
+    font-size: 0.9em;
+    margin: 0;
+  }
+
+  .time {
+    width: calc( 260px - #{$tl-lay} );
+    text-align: right;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    font-weight: 300;
+    color: #374054;
+  }
+}
+
+.artist-wrap {
+  display: block;
+  position: relative;
+  margin-bottom: 30px;
+  vertical-align: top;
+
+  .icon {
+    float: left;
+    position: relative;
+    margin-left: calc( 280px - #{$tl-lay} );
+    width: 50px;
+    height: 50px;
+    background: $base-color;
+    border-radius: 50%;
+    color: #fff;
+    z-index: 99;
+
+    i {
+      display: block;
+      margin: 8px 0 0 -2px;
+      font-size: 2em;
+    }
+  }
+}
+
+
+.artist-section-content {
+  display: flex;
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+  overflow: hidden;
+  background: #fff;
+  border: 3px solid $border;
+  @include shadow-book;
+
+  .image {
+    padding: 20px;
+
+    img {
+      max-width: 300px;
+      max-height: 300px;
+      height: auto;
+    }
+
+    a:hover {
+      opacity: .7;
+    }
+  }
+
+  .text {
+    padding: 20px;
+
+    h3 {
+      display: block;
+      font-size: 1.5em;
+      font-weight: 300;
+      color: $heading;
+      margin: 0 0 15px 0;
+    }
+
+    a {
+      display: inline-block;
+      margin: 1em 0;
+      padding: 0.5em 2em;
+      background: $base-color;
+      border-radius: 3px;
+      color: $background;
+      transition: all 0.3s ease-out;
+      text-decoration: none;
+
+      &:hover   { background: $base-color-hover; }
+      &:active  { background: $base-color-hover; }
+      &:visited { background: $base-color-hover; }
+    }
+  }
+}
+
+
+
+/*
+    -------------------------------
+    ----- 10. Info Styles -----
+    -------------------------------
+*/
+
+#info {
+  padding: 50px 15px;
+  text-align: center;
+  background: $background;
+
+  h2 {
+    color: $heading;
+    margin-bottom: 50px;
+  }
+}
+
+.info-image {
+
+  img {
+    max-width: 100%;
+    box-shadow: 0 .2em 1em rgba(0, 0, 0, .2);
+  }
+}
+
+.info-content {
+
+  dl {
+    text-align: left;
+    margin: 0;
+    padding-left: 1em;
+  }
+
+  dt {
+    border-bottom: 2px solid black;
+    margin: 0 0 .5em 0;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  dt::before {
+    content: "▶";
+    color: $base-color;
+    margin-right: .2em;
+  }
+
+  dt, dd {
+    line-height: 2;
+  }
+
+  dd {
+    margin: 0 0 2em 0;
+  }
+}
+
+
+/*
+    --------------------------------
+    ---------- Map Styles ----------
+    --------------------------------
+*/
+
+#map {
+  padding: 50px 15px;
+  text-align: center;
+  background: $background-alt;
+
+  h2 {
+    color: $heading;
+    margin-bottom: 50px;
+  }
+}
+
+.map-wrap {
+  position: relative;
+  padding-bottom: 45vh;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  border: 3px solid $border;
+  @include shadow-book;
+
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+
+
+// -----------------------
+// -----------------------
+// Media Query
+// -----------------------
+// -----------------------
+// TImetable Layout Modify
+@media only screen and (max-width: 750px) {
+
+  #artists-timetable {
+    &:before, &:after {
+      left: 23px;
+    }
+  }
+
+  .artist-wrap {
+    .icon {
+      margin-left: 0;
+    }
+  }
+
+  .artist-section {
+    margin-left: calc( 70px - #{$tl-lay} );;
+    .time {
+      display: block;
+      position: relative;
+      top: 0;
+      margin-bottom: 15px;
+      margin-left: 70px;
+      width: auto;
+      text-align: left;
+    }
+  }
+}
+
+// Medium Devices
+@media only screen and (max-width : 992px) {
+
+    #lead {
+      padding: 50px 15px;
+      height: auto;
+      min-height: auto;
+      max-height: auto;
+      background-size: contain;
+    }
+
+    #lead-content {
+        position: relative;
+        transform: none;
+        left: auto;
+        top: auto;
+
+        h1 {
+            font-size: 3em;
+        }
+
+        h2 {
+            font-size: 1.75em;
+        }
+    }
+
+    #about {
+        text-align: center;
+
+        p {
+            text-align: left;
+        }
+    }
+
+}
+
+// Small Devices
+@media only screen and (max-width : 768px) {
+
+  #about {
+    padding: 45px 15px;
+  }
+
+  #lead-content {
+    h1 {
+      font-size: 2em;
+    }
+
+    h2 {
+      font-size: 1.3em;
+    }
+
+    a {
+      padding: 10px 20px;
+    }
+  }
+
+  #lead-down {
+    display: none;
+  }
+
+  .artist-section-content {
+    flex-flow: column wrap;
+
+    .image {
+      width: 100%;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .text {
+      width: 100%;
+      margin: 0;
+      text-align: center;
+    }
+  }
+
+  #info {
+
+    .info-image {
+      margin-bottom: 30px;
+    }
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  .social {
+    text-align: center;
+  }
+
+}
+
+// Extra Small Devices
+@media only screen and (max-width : 480px) {
+
+  #lead-content {
+    h1 {
+      font-size: 1.5em;
+    }
+
+    h2 {
+      font-size: 1em;
+    }
+
+    a {
+      font-size: 0.9em;
+      padding: 5px 10px;
+    }
+  }
+
+}
